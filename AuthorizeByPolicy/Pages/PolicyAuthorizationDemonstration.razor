@@ -1,0 +1,30 @@
+﻿@page "/policy-authorization-demonstration"
+@using Microsoft.AspNetCore.Components.Authorization
+
+<h3>PolicyAuthorizationDemonstration</h3>
+<AuthorizeView Policy="AdultPolicy">
+    <Authorized>
+        <div>You are an adult</div>
+    </Authorized>
+    <NotAuthorized>
+        <div>You are not an adult</div>
+    </NotAuthorized>
+</AuthorizeView>
+
+<AuthorizeView Policy="UnderAgePolicy" Resource="10">
+    <Authorized>
+        <div>You are more than 10</div>
+    </Authorized>
+    <NotAuthorized>
+        <div>You are not more than 10</div>
+    </NotAuthorized>
+</AuthorizeView>
+
+<AuthorizeView Policy="UnderAgePolicy" Resource="20">
+    <Authorized>
+        <div>You are more than 20</div>
+    </Authorized>
+    <NotAuthorized>
+        <div>You are not more than 20</div>
+    </NotAuthorized>
+</AuthorizeView>

@@ -1,0 +1,29 @@
+﻿@page "/create-token"
+@using AuthorizeOnIndividualComponent.Models;
+@using Microsoft.IdentityModel.Tokens;
+@using System.Text;
+@using System.IdentityModel.Tokens.Jwt;
+@using System.Security.Claims;
+
+<p>This page serves as a generator for example-data folder. Not for learning purpose.</p>
+@Token
+<button type="button" @onclick="CreateNewToken">Create</button>
+
+@code {
+    public string Token { get; set; } = "";
+
+    public void CreateNewToken()
+    {
+        string username = "blazorschool_paid";
+        int age = 14;
+        string[] roles = { "normal_user", "paid_user" };
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var token = new JwtSecurityToken("BlazorSchool", "BlazorSchool", new Claim[]
+                        {
+                        new (ClaimTypes.Name, username),
+                        new (ClaimTypes.Hash, "blazorschool"),
+                        new (nameof(User.Age), age.ToString())
+                        }.Concat(roles.Select(r => new Claim(ClaimTypes.Role, r)).ToArray()));
+        Token = tokenHandler.WriteToken(token);
+    }
+}

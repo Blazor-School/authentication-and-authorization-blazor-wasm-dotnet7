@@ -1,0 +1,30 @@
+﻿@page "/role-authorization-demonstration"
+@using Microsoft.AspNetCore.Components.Authorization
+
+<h3>RoleAuthorizationDemonstration</h3>
+<AuthorizeView Roles="User">
+    <Authorized>
+        <div>You are a user</div>
+    </Authorized>
+    <NotAuthorized>
+        <div>Content blocked</div>
+    </NotAuthorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="PremiumUser">
+    <Authorized>
+        <div>You are a premium user</div>
+    </Authorized>
+    <NotAuthorized>
+        <div>Content blocked</div>
+    </NotAuthorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Admin">
+    <Authorized>
+        <div>You are an admin</div>
+    </Authorized>
+    <NotAuthorized>
+        <div>Content blocked</div>
+    </NotAuthorized>
+</AuthorizeView>
