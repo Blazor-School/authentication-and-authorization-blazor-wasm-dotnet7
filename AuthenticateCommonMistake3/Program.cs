@@ -1,7 +1,5 @@
-using AuthorizeOnRoute;
-using AuthorizeOnRoute.Requirements;
-using AuthorizeOnRoute.Utilities;
-using Microsoft.AspNetCore.Authorization;
+using AuthenticateCommonMistake3;
+using AuthenticateCommonMistake3.Utilities;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -15,16 +13,6 @@ builder.Services.AddScoped<AuthenticationDataMemoryStorage>();
 builder.Services.AddScoped<BlazorSchoolUserService>();
 builder.Services.AddScoped<BlazorSchoolAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(sp => sp.GetRequiredService<BlazorSchoolAuthenticationStateProvider>());
-builder.Services.AddScoped<IAuthorizationHandler, AdultRequirementHandler>();
-builder.Services.AddAuthorizationCore(config =>
-{
-    config.AddPolicy("AdultOnly", policy => policy.AddRequirements(new AdultRequirement()));
-
-    config.AddPolicy("AdultAdminOnly", policy =>
-    {
-        policy.AddRequirements(new AdultRequirement());
-        policy.RequireRole("admin");
-    });
-});
+builder.Services.AddAuthorizationCore();
 
 await builder.Build().RunAsync();

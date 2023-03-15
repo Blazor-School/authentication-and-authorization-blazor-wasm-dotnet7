@@ -1,4 +1,4 @@
-﻿namespace AuthorizeOnRoute.Utils;
+﻿namespace AuthenticateCommonMistake1.Utilities;
 
 public class AuthenticationDataMemoryStorage
 {

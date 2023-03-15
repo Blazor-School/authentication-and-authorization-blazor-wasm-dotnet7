@@ -1,8 +1,8 @@
-﻿using AuthenticateCommonMistake1.Models;
+﻿using AuthorizeOnIndividualComponent.Models;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
 
-namespace AuthenticateCommonMistake1.Utils;
+namespace AuthorizeOnIndividualComponent.Utilities;
 
 public class BlazorSchoolAuthenticationStateProvider : AuthenticationStateProvider, IDisposable
 {

@@ -1,8 +1,8 @@
-﻿using AuthorizeOnIndividualComponent.Models;
+﻿using AuthenticateCommonMistake1.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace AuthorizeOnIndividualComponent.Utils;
+namespace AuthenticateCommonMistake1.Utilities;
 
 public class BlazorSchoolUserService
 {
@@ -45,7 +45,8 @@ public class BlazorSchoolUserService
         if (tokenHandler.CanReadToken(token))
         {
             var jwtSecurityToken = tokenHandler.ReadJwtToken(token);
-            identity = new ClaimsIdentity(jwtSecurityToken.Claims, "Blazor School");
+            // identity = new ClaimsIdentity(jwtSecurityToken.Claims, "Blazor School"); // Correct
+            identity = new ClaimsIdentity(jwtSecurityToken.Claims); // Wrong
         }
 
         return new ClaimsPrincipal(identity);

@@ -1,5 +1,5 @@
 using AuthenticateCommonMistake1;
-using AuthenticateCommonMistake1.Utils;
+using AuthenticateCommonMistake1.Utilities;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

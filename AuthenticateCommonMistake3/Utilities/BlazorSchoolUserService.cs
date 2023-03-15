@@ -1,8 +1,8 @@
-﻿using AuthorizeOnRoute.Models;
+﻿using AuthenticateCommonMistake3.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace AuthorizeOnRoute.Utils;
+namespace AuthenticateCommonMistake3.Utilities;
 
 public class BlazorSchoolUserService
 {

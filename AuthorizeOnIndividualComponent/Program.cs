@@ -1,6 +1,6 @@
 using AuthorizeOnIndividualComponent;
 using AuthorizeOnIndividualComponent.Requirements;
-using AuthorizeOnIndividualComponent.Utils;
+using AuthorizeOnIndividualComponent.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;

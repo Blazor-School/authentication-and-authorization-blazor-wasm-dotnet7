@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
 
-namespace AuthorizeOnRoute.Utils;
+namespace AuthorizeOnRoute.Utilities;
 
 public class BlazorSchoolAuthenticationStateProvider : AuthenticationStateProvider, IDisposable
 {

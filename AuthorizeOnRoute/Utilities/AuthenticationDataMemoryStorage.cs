@@ -1,4 +1,4 @@
-﻿namespace AuthorizeOnIndividualComponent.Utils;
+﻿namespace AuthorizeOnRoute.Utilities;
 
 public class AuthenticationDataMemoryStorage
 {

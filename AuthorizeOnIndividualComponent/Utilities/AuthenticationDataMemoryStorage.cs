@@ -1,4 +1,4 @@
-﻿namespace AuthenticateCommonMistake1.Utils;
+﻿namespace AuthorizeOnIndividualComponent.Utilities;
 
 public class AuthenticationDataMemoryStorage
 {
