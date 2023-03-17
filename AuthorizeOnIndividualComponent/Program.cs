@@ -17,6 +17,5 @@ builder.Services.AddScoped<BlazorSchoolAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(sp => sp.GetRequiredService<BlazorSchoolAuthenticationStateProvider>());
 builder.Services.AddScoped<IAuthorizationHandler, EsrbRequirementHandler>();
 builder.Services.AddAuthorizationCore(config => config.AddPolicy("EsrbPolicy", policy => policy.AddRequirements(new EsrbRequirement())));
-builder.Services.AddAuthorizationCore();
 
 await builder.Build().RunAsync();
