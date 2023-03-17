@@ -19,17 +19,17 @@ public class BlazorSchoolUserService
     {
         if (password == "blazorschool")
         {
-            var response = await _httpClient.GetAsync($"/example-data/{username}.json");
+        var response = await _httpClient.GetAsync($"/example-data/{username}.json");
 
-            if (response.IsSuccessStatusCode)
-            {
-                string token = await response.Content.ReadAsStringAsync();
-                var claimPrincipal = CreateClaimsPrincipalFromToken(token);
-                var user = User.FromClaimsPrincipal(claimPrincipal);
-                PersistUserToBrowser(token);
+        if (response.IsSuccessStatusCode)
+        {
+            string token = await response.Content.ReadAsStringAsync();
+            var claimPrincipal = CreateClaimsPrincipalFromToken(token);
+            var user = User.FromClaimsPrincipal(claimPrincipal);
+            PersistUserToBrowser(token);
 
-                return user;
-            }
+            return user;
+        }
         }
 
         return null;
@@ -45,10 +45,10 @@ public class BlazorSchoolUserService
         if (tokenHandler.CanReadToken(token))
         {
             var jwtSecurityToken = tokenHandler.ReadJwtToken(token);
-            identity = new ClaimsIdentity(jwtSecurityToken.Claims, "Blazor School");
+            identity = new (jwtSecurityToken.Claims, "Blazor School");
         }
 
-        return new ClaimsPrincipal(identity);
+        return new (identity);
     }
 
     public User? FetchUserFromBrowser()
